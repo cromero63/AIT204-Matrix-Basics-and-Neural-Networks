@@ -1,0 +1,13 @@
+User:
+Switch validation from correct ID to correct player name
+
+AI:
+Now I'll update the validation logic to use player names instead of IDs:
+
+Edited
+app.py+6-5
+Done! I've switched the validation logic from comparing IDs to comparing player names. Now the model will:
+
+Extract the player names from the selected display labels (removing the season part)
+Compare the picked player names against the selected player names
+Display which players the AI correctly identified by name instead of ID

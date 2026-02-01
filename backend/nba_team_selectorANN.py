@@ -41,11 +41,14 @@ class NbaTeamSelectorANN(nn.Module):
         :param X: The input NumPy array
         :param y: The target NumPy Array
         :param epochs: The number of loops to train on
+        :return: List of losses for each epoch
         """
         # Convert NumPy arrays to Tensors
         X_tensor = torch.tensor(X, dtype=torch.float32, device=self.device)
         y_tensor = torch.tensor(y, dtype=torch.float32, device=self.device)
 
+        losses = []  # Track losses over epochs
+        
         # train for number of inputed epochs
         for epoch in range(epochs):
             self.train() 
@@ -56,8 +59,12 @@ class NbaTeamSelectorANN(nn.Module):
             loss.backward()
             self.opt.step()
             
+            losses.append(loss.item())
+            
             if (epoch + 1) % 10 == 0:
                 print(f"Epoch {epoch+1}/{epochs}, Loss: {loss.item():.4f}")
+        
+        return losses
 
     def predict(self, X):
         """
