@@ -106,7 +106,13 @@ def Main():
         2. Adjust the number of samples and training epochs
         3. Click "Run Model" to train the network
         4. The model will display which players it selected as the optimal team
+        
+        ### Ethical Considerations:
+        This model is trained on your personal selections, which means it reflects your biases and preferences. 
+        The statistics-based approach cannot capture intangible qualities like leadership or chemistry, and should never be used for real hiring or trading decisions in professional sports, as such applications could perpetuate discrimination and unfairly impact players' careers and livelihoods. 
+        Always treat ML predictions as a tool for exploration, not as ground truth for consequential decisions.
         """)
+    
 
     # =====================================
     # AI Model, Data collection, Training, and Evaluation
